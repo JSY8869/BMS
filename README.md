@@ -68,5 +68,21 @@ h2 database
 ### "/basic/books/{bookGenre}"
 - Get
   - 도서 장르별 검색
- 
- .... 작성 예정
+
+### "/basic/books/{bookId}"
+- Get
+  - 도서 상세 정보
+  - "basic/item" 으로 출력
+
+### "/basic/books/{bookId}/edit"
+- Get
+  - 도서 수정 화면
+  - 도서 상세 정보 화면에서 수정 버튼을 눌러 이동
+- Post
+  - 도서 수정 화면에서 입력한 정보에 따라 도서 수정
+  - redirect로 "/basic/books/{bookId}"(도서 상세 정보) 화면으로 이동
+
+### "/basic/books/{bookId}/delete"
+- Post
+  - 도서 상세 정보 화면에서 삭제 버튼을 눌러 작동
+  - 삭제 완료 후 redirect로 도서 전체 출력 화면으로 이동
