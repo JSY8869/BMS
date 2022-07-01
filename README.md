@@ -37,3 +37,36 @@ input.txt 파일 이외의 다른 파일을 사용하거나 만들지 않는다.
 
 ## DB
 h2 database
+
+## url Mapping
+### "/basic/books"
+- Get
+  - 도서 전체 출력 창
+  
+### "/basic/books/add"
+- Get
+  - 도서 추가 화면으로 이동("basic/addForm")
+- Post
+  - 도서 추가 및 redirect 이동("/basic/books/{bookId}")
+  
+### "/basic/books/{bookName}"
+- Get
+  - 도서 제목 검색
+  
+### "/basic/books/{bookAuthor}"
+- Get
+  - 도서 저자 검색
+  
+### "/basic/books/{bookYear}"
+- Get
+  - 도서 출판연도 검색
+  
+### "/basic/books/{bookCompany}"
+- Get
+  - 도서 출판사명 검색
+  
+### "/basic/books/{bookGenre}"
+- Get
+  - 도서 장르별 검색
+ 
+ .... 작성 예정
