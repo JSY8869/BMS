@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www/thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <link th:href="@{/css/bootstrap.min.css}"
+        href="../css/bootstrap.min.css" rel="stylesheet">
+  <style>
+ .container {
+ max-width: 560px;
+ }
+ </style>
+</head>
+<body>
+<div class="container">
+  <div class="py-5 text-center">
+    <h2>도서 삭제 폼</h2>
+  </div>
+  <h4 class="mb-3">도서 정보</h4>
+  <form action="book.html" th:action method="post">
+    <div>
+      <label for="id">도서 ID</label>
+      <input type="text" id="id" name="id" class="form-control" value="1"
+             th:value="${book.id}" readonly>
+    </div>
+    <div>
+      <label for="name">도서명</label>
+      <input type="text" id="name" name="name" class="form-control" value="상품A" th:value="${book.name}" readonly>
+    </div>
+    <div>
+      <label for="author">저자</label>
+      <input type="text" id="author" name="author" class="form-control"
+             th:value="${book.author}" readonly>
+    </div>
+    <div>
+      <label for="year">출판연도</label>
+      <input type="text" id="year" name="year" class="form-control" th:value="${book.year}" readonly>
+    </div>
+    <div>
+      <label for="company">출판사명</label>
+      <input type="text" id="company" name="company" class="form-control" th:value="${book.company}" readonly>
+    </div>
+    <div>
+      <label for="genre">장르</label>
+      <input type="text" id="genre" name="genre" class="form-control" th:value="${book.genre}" readonly>
+    </div>
+    <hr class="my-4">
+    <div class="row">
+      <div class="col">
+        <button class="w-100 btn btn-danger btn-lg" type="submit">삭제
+        </button>
+      </div>
+      <div class="col">
+        <button class="w-100 btn btn-secondary btn-lg"
+                onclick="location.href='book.html'"
+                th:onclick="|location.href='@{/basic/books/{bookId}(bookId=${book.id})}'|"
+                type="button">취소</button>
+      </div>
+    </div>
+  </form>
+</div> <!-- /container -->
+</body>
+</html>
