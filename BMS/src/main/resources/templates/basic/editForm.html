@@ -51,7 +51,7 @@
             <div class="col">
                 <button class="w-100 btn btn-secondary btn-lg"
                         onclick="location.href='book.html'"
-                        th:onclick="|location.href='@{/basic/books/{bookId}(bookId=${book.id})}'|"
+                        th:onclick="|location.href='@{/basic/books/{bookId}/detail(bookId=${book.id})}'|"
                         type="button">취소</button>
             </div>
         </div>

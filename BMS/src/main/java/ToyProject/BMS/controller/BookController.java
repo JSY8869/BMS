@@ -1,6 +1,7 @@
 package ToyProject.BMS.controller;
 
 import ToyProject.BMS.model.domain.entity.Book;
+import ToyProject.BMS.model.domain.entity.SearchCategory;
 import ToyProject.BMS.service.BookManagementService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -45,11 +47,11 @@ public class BookController {
         bookManagementService.plusBook(book);
         model.addAttribute("book", book);
         redirectAttributes.addAttribute("status", true);
-        return "redirect:/basic/books/"+book.getId();
+        return "redirect:/basic/books/"+book.getId()+"/detail";
     }
 
     // 도서 상세 정보
-    @GetMapping("/{bookId}")
+    @GetMapping("{bookId}/detail")
     public String bookDetail(@PathVariable("bookId")Long id, Model model) {
         Book book = bookManagementService.detailBook(id);
         model.addAttribute("book", book);
@@ -68,7 +70,7 @@ public class BookController {
         bookManagementService.updateBook(id, book);
         model.addAttribute("book", book);
         redirectAttributes.addAttribute("status", true);
-        return "redirect:/basic/books/" + id;
+        return "redirect:/basic/books/" + id + "/detail";
     }
 
     // 도서 삭제
@@ -82,5 +84,31 @@ public class BookController {
     public String bookDelete(@PathVariable("bookId") Long id, Model model) {
         bookManagementService.deleteBook(id);
         return "redirect:/basic/books";
+    }
+
+    // 도서 검색
+    @GetMapping("/search")
+    public String searchBook(Model model) {
+        model.addAttribute("keyword", "");
+        model.addAttribute("category", makeCategory());
+        return "/basic/searchForm";
+    }
+
+    @PostMapping("/search")
+    public String findBookListByBookName(@RequestParam("keyword") String keyword,
+                                         @RequestParam("category") String category,
+                                         Model model) {
+        model.addAttribute("books", bookManagementService.search(keyword, category));
+        return "/basic/searchResult";
+    }
+
+    private List<SearchCategory> makeCategory() {
+        List<SearchCategory> category = new ArrayList<>();
+        category.add(new SearchCategory("NAME", "제목"));
+        category.add(new SearchCategory("AUTHOR", "저자"));
+        category.add(new SearchCategory("YEAR", "출판연도"));
+        category.add(new SearchCategory("GENRE", "장르"));
+        category.add(new SearchCategory("COMPANY", "출판사명"));
+        return category;
     }
 }

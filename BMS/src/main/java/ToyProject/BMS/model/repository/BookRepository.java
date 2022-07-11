@@ -22,7 +22,9 @@ public class BookRepository {
     }
 
     public void deleteByBook(Long id) {
-        em.createQuery("delete Book where id = :id").setParameter("id", id);
+        em.remove(em.find(Book.class, id));
+        em.flush();
+        em.clear();
     }
 
     public Book findOne(Long id) {

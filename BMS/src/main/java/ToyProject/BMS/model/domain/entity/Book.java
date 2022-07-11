@@ -10,14 +10,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-@Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Data
 public class Book {
     @Id @GeneratedValue
     private Long id;
     private String name, author, year, genre, company;
 
+    public Book() {
+    }
 
     public Book(String name, String author, String year, String genre, String company) {
         this.name = name;

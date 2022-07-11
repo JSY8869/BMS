@@ -5,8 +5,8 @@ import ToyProject.BMS.model.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -25,24 +25,27 @@ public class BookManagementService {
         bookRepository.deleteByBook(id);
     }
 
-    // 도서 저자 검색
-    public List<Book> searchBookAuthor(String author) {
-        return bookRepository.findByName(author);
-    }
-
-    // 도서 출판사 검색
-    public List<Book> searchBookCompany(String company) {
-        return bookRepository.findByName(company);
-    }
-
-    // 도서 출판연도 검색
-    public List<Book> searchBookYear(String year) {
-        return bookRepository.findByName(year);
-    }
-
-    // 도서 장르 검색
-    public List<Book> searchBookGenre(String genre) {
-        return bookRepository.findByName(genre);
+    //도서 검색
+    public List<Book> search(String keyword, String category) {
+        List<Book> books = new ArrayList<>();
+        switch (category) {
+            case "NAME":
+                books = bookRepository.findByName(keyword);
+                break;
+            case "AUTHOR":
+                books = bookRepository.findByAuthor(keyword);
+                break;
+            case "YEAR":
+                books = bookRepository.findByYear(keyword);
+                break;
+            case "GENRE":
+                books = bookRepository.findByGenre(keyword);
+                break;
+            case "COMPANY":
+                books = bookRepository.findByCompany(keyword);
+                break;
+        }
+        return books;
     }
 
     // 도서 전체 출력
