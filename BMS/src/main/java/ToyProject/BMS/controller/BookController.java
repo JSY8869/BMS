@@ -1,5 +1,7 @@
 package ToyProject.BMS.controller;
 
+import ToyProject.BMS.controller.form.BookSaveForm;
+import ToyProject.BMS.controller.form.BookUpdateForm;
 import ToyProject.BMS.model.domain.entity.Book;
 import ToyProject.BMS.model.domain.entity.SearchCategory;
 import ToyProject.BMS.service.BookManagementService;
@@ -7,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -38,12 +42,20 @@ public class BookController {
 
     // 도서 추가
     @GetMapping("/add")
-    public String addForm() {
+    public String addForm(Model model) {
+        model.addAttribute("book", new Book());
         return "/basic/addForm";
     }
 
     @PostMapping("/add")
-    public String addBook(Book book, Model model, RedirectAttributes redirectAttributes) {
+    public String addBook(@Validated @ModelAttribute("book") BookSaveForm form, BindingResult bindingResult,
+                          Model model, RedirectAttributes redirectAttributes) {
+        // 검증 실패시
+        if (bindingResult.hasErrors()) {
+            return "/basic/addForm";
+        }
+        // 검증 성공시
+        Book book = new Book(form.getName(), form.getAuthor(), form.getYear(), form.getGenre(), form.getCompany());
         bookManagementService.plusBook(book);
         model.addAttribute("book", book);
         redirectAttributes.addAttribute("status", true);
@@ -51,8 +63,8 @@ public class BookController {
     }
 
     // 도서 상세 정보
-    @GetMapping("{bookId}/detail")
-    public String bookDetail(@PathVariable("bookId")Long id, Model model) {
+    @GetMapping("/{bookId}/detail")
+    public String bookDetail(@PathVariable("bookId") Long id, Model model) {
         Book book = bookManagementService.detailBook(id);
         model.addAttribute("book", book);
         return "/basic/book";
@@ -60,15 +72,29 @@ public class BookController {
 
     // 도서 수정
     @GetMapping("/{bookId}/edit")
-    public String bookEditForm(@PathVariable("bookId")Long id, Model model) {
-        model.addAttribute("book", bookManagementService.detailBook(id));
+    public String bookEditForm(@PathVariable("bookId") Long id, Model model) {
+        Book book = bookManagementService.detailBook(id);
+        model.addAttribute("book", book);
         return "/basic/editForm";
     }
 
     @PostMapping("/{bookId}/edit")
-    public String bookEdit(@PathVariable("bookId")Long id, Book book, Model model, RedirectAttributes redirectAttributes) {
+    public String bookEdit(@PathVariable("bookId")Long id,
+                           @Validated @ModelAttribute("book") BookUpdateForm form,
+                           BindingResult bindingResult,
+                           RedirectAttributes redirectAttributes) {
+        // 검증 실패시
+        if (bindingResult.hasErrors()) {
+            return "/basic/editForm";
+        }
+        // 검증 성공시
+        Book book = new Book();
+        book.setName(form.getName());
+        book.setYear(form.getYear());
+        book.setCompany(form.getCompany());
+        book.setAuthor(form.getAuthor());
+        book.setGenre(form.getGenre());
         bookManagementService.updateBook(id, book);
-        model.addAttribute("book", book);
         redirectAttributes.addAttribute("status", true);
         return "redirect:/basic/books/" + id + "/detail";
     }
@@ -76,13 +102,14 @@ public class BookController {
     // 도서 삭제
     @GetMapping("/{bookId}/delete")
     public String bookDeleteForm(@PathVariable("bookId") Long id, Model model) {
-        model.addAttribute("book", bookManagementService.detailBook(id));
+        model.addAttribute("book", new Book());
+        model.addAttribute("findResult", bookManagementService.detailBook(id));
         return "/basic/deleteForm";
     }
 
     @PostMapping("/{bookId}/delete")
-    public String bookDelete(@PathVariable("bookId") Long id, Model model) {
-        bookManagementService.deleteBook(id);
+    public String bookDelete(@ModelAttribute Book book, Model model) {
+        bookManagementService.deleteBook(book.getId());
         return "redirect:/basic/books";
     }
 
@@ -91,14 +118,23 @@ public class BookController {
     public String searchBook(Model model) {
         model.addAttribute("keyword", "");
         model.addAttribute("category", makeCategory());
+        model.addAttribute("searchCategory", new SearchCategory());
         return "/basic/searchForm";
     }
 
     @PostMapping("/search")
-    public String findBookListByBookName(@RequestParam("keyword") String keyword,
-                                         @RequestParam("category") String category,
+    public String findBookListByBookName(@Validated @ModelAttribute SearchCategory searchCategory,
+                                         BindingResult bindingResult,
                                          Model model) {
-        model.addAttribute("books", bookManagementService.search(keyword, category));
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("category", makeCategory());
+            return "/basic/searchForm";
+        }
+        List<Book> bookList = bookManagementService.search(searchCategory.getKeyword(), searchCategory.getCategory());
+        if (bookList.isEmpty()) {
+            model.addAttribute("noResult", true);
+        }
+        model.addAttribute("books", bookList);
         return "/basic/searchResult";
     }
 

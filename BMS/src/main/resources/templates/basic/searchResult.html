@@ -8,6 +8,7 @@
 <body>
 
 <div class="container" style="max-width: 600px">
+
   <div class="py-5 text-center">
     <h2>검색 결과</h2>
   </div>
@@ -43,6 +44,7 @@
       </tr>
       </tbody>
     </table>
+    <h2 th:if="${noResult}" th:text="'검색 결과 없음'"></h2>
   </div>
 </div> <!-- /container -->
 </body>

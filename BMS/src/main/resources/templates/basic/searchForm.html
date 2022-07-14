@@ -5,26 +5,32 @@
     <link href="../css/bootstrap.min.css"
           th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
     <style>
- .container {
- max-width: 560px;
- }
- </style>
+         .container {
+         max-width: 560px;
+         }
+          .field-error {
+         border-color: #dc3545;
+         color: #dc3545;
+         }
+    </style>
 </head>
 <body>
 <div class="container">
     <div class="py-5 text-center">
         <h2>도서 검색 폼</h2>
     </div>
-    <form action="searchForm.html" th:action method="POST">
+    <form action="searchForm.html" th:action th:object="${searchCategory}" method="POST">
         <div>
-            <input type="text" th:name="keyword" th:value="${keyword}" class="form-control" placeholder="검색어를 입력하세요.">
+            <input type="text" id="keyword" th:field="*{keyword}" class="form-control"
+                   placeholder="검색어를 입력하세요." th:errorclass="field-error">
+            <div class="field-error" th:errors="*{keyword}">
         </div>
 
         <!-- SELECT -->
         <div>
             <div>검색 방식</div>
             <select th:value="${category}" th:name="category" class="form-select">
-                <option th:each="type : ${category}" th:value="${type.code}"
+                <option th:each="type : ${category}" th:value="${type.keyword}"
                         th:text="${type.category}">제목</option>
             </select>
         </div>
