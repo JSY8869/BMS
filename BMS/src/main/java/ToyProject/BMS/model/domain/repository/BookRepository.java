@@ -1,4 +1,4 @@
-package ToyProject.BMS.model.repository;
+package ToyProject.BMS.model.domain.repository;
 
 import ToyProject.BMS.model.domain.entity.Book;
 import org.springframework.stereotype.Repository;

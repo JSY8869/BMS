@@ -1,7 +1,7 @@
-package ToyProject.BMS.service;
+package ToyProject.BMS.model.domain.service;
 
 import ToyProject.BMS.model.domain.entity.Book;
-import ToyProject.BMS.model.repository.BookRepository;
+import ToyProject.BMS.model.domain.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

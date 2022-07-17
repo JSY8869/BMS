@@ -4,7 +4,7 @@ import ToyProject.BMS.controller.form.BookSaveForm;
 import ToyProject.BMS.controller.form.BookUpdateForm;
 import ToyProject.BMS.model.domain.entity.Book;
 import ToyProject.BMS.model.domain.entity.SearchCategory;
-import ToyProject.BMS.service.BookManagementService;
+import ToyProject.BMS.model.domain.service.BookManagementService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
