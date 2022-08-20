@@ -33,6 +33,9 @@ input.txt 파일 이외의 다른 파일을 사용하거나 만들지 않는다.
 - thymeleaf 3.0.15
 - java 11
 - spring data jpa
+
+
+merge 정보
 - spring web
 
 ## DB
