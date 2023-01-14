@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<link th:href="@{/css/bootstrap.min.css}"
+		  href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="landing is-preload">
+
+<!-- Page Wrapper -->
+<div id="page-wrapper">
+
+	<!-- Header -->
+	<header id="header" class="alt">
+		<h1><a th:href="@{/static}">도서관리 프로그램</a></h1>
+		</nav>
+	</header>
+
+	<!-- Banner -->
+	<section id="banner">
+		<div class="inner">
+			<h2>도서관리 프로그램</h2>
+			<p th:text="${errorCode}"></p>
+			<ul class="actions special">
+				<li><a th:href="@{/}" class="button primary">Home</a></li>
+			</ul>
+		</div>
+	</section>
+</div>
+</body>
+</html>
