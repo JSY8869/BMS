@@ -4,76 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8151d423-ba0d-4708-855c-05ca2f757199" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/java/eon/bms/auth/MemberDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/java/eon/bms/auth/MemberDetailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/java/eon/bms/config/JasyptConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/java/eon/bms/config/QuerydslConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/java/eon/bms/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/java/eon/bms/domain/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/java/eon/bms/domain/GenreEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/java/eon/bms/domain/Member.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/java/eon/bms/exception/CustomException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/java/eon/bms/exception/ErrorCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/java/eon/bms/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/java/eon/bms/service/MemberService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/resources/templates/basic/addForm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/resources/templates/basic/book.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/resources/templates/basic/books.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/resources/templates/basic/deleteForm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/resources/templates/basic/editForm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/resources/templates/basic/member/addMemberForm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/resources/templates/basic/searchForm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/resources/templates/basic/searchResult.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/resources/templates/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/resources/templates/error/customErrorPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/resources/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/resources/templates/login/loginForm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bms/src/main/resources/templates/loginHome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/BmsApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/controller/BookController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/controller/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/controller/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/controller/MemberController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/controller/form/BookSaveForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/controller/form/BookUpdateForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/controller/form/LoginForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/model/domain/SessionConst.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/model/domain/entity/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/model/domain/entity/Member.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/model/domain/entity/SearchCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/model/domain/login/LoginCheckInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/model/domain/login/WebConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/model/domain/repository/BookRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/model/domain/repository/MemberRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ToyProject/BMS/model/domain/service/BookManagementService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/errors.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/basic/addForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/basic/book.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/basic/books.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/basic/deleteForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/basic/editForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/basic/member/addMemberForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/basic/searchForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/basic/searchResult.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login/loginForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/loginHome.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ToyProject/BMS/BmsApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="0ff2fc36-63c1-4b1e-8a8c-d0f8073bd63d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,23 +23,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BMS" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BMS" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="BMS" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -118,24 +33,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -143,39 +46,45 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2BIQnrGw42w2jczKrqc6RfvRJuX" />
+  <component name="ProjectId" id="2K8VMwh38Vo8glYgNTUGXL4efpv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="showExcludedFiles" value="false" />
+    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jason/Desktop/github/BMS/bms/bms/build.gradle&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;f3123eed5b9444d7f6f36d7ed40ece8b&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Jason/Desktop/github/BMS/BMS/bms/build.gradle",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "spring.configuration.checksum": "f7e0bf79b8e7cb899fa29235232bc71a"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Jason\Desktop\github\BMS\BMS\src\main\resources\static" />
-      <recent name="C:\Users\Jason\Desktop\github\BMS\BMS\src\main\resources\templates" />
-      <recent name="C:\Users\Jason\Desktop\github\BMS\BMS\src\main\resources\templates\basic" />
+      <recent name="C:\Users\Jason\Desktop\github\BMS\bms\bms\src\main\resources\templates" />
+      <recent name="C:\Users\Jason\Desktop\github\BMS\bms\bms\src\main\resources" />
+      <recent name="C:\Users\Jason\Desktop\github\BMS\bms\bms\src\main\java\eon\bms\config" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jason\Desktop\github\BMS\bms\bms\src\main\resources\templates" />
+      <recent name="C:\Users\Jason\Desktop\github\BMS\bms\bms\src\main\resources\templates\basic" />
+      <recent name="C:\Users\Jason\Desktop\github\BMS\bms\bms\src\main\java\eon\bms" />
+      <recent name="C:\Users\Jason\Desktop\github\BMS\bms\bms\src\main\java\eon\bms\domain" />
     </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="ToyProject.BMS.model.domain.entity" />
-      <recent name="ToyProject.BMS.model.domain.repository" />
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="eon.bms.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.C:/Users/Jason/Desktop/github/BMS/BMS">
-    <configuration name="BMS [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Spring Boot.BmsApplication">
+    <configuration name="bms [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -196,7 +105,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="BMS [compileJava]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="bms [compileJava]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -217,7 +126,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="BMS [compileQuerydsl]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="bms [compileQuerydsl]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -238,7 +147,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="C:/Users/Jason/Desktop/github/BMS/BMS" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="bms [compileTestJava]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -248,7 +157,9 @@
           <list />
         </option>
         <option name="taskNames">
-          <list />
+          <list>
+            <option value="compileTestJava" />
+          </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
@@ -257,84 +168,40 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="BookTest.addBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="BMS.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ToyProject.BMS.model.domain.entity.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ToyProject.BMS.model.domain.entity" />
-      <option name="MAIN_CLASS_NAME" value="ToyProject.BMS.model.domain.entity.BookTest" />
-      <option name="METHOD_NAME" value="addBook" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BmsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="BMS.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="ToyProject.BMS.BmsApplication" />
+      <module name="bms.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="eon.bms.BmsApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.C:/Users/Jason/Desktop/github/BMS/BMS" />
-        <item itemvalue="Gradle.BMS [compileQuerydsl]" />
-        <item itemvalue="Gradle.BMS [clean]" />
-        <item itemvalue="Gradle.BMS [compileJava]" />
-        <item itemvalue="JUnit.BookTest.addBook" />
+        <item itemvalue="Gradle.bms [compileJava]" />
+        <item itemvalue="Gradle.bms [clean]" />
+        <item itemvalue="Gradle.bms [compileTestJava]" />
+        <item itemvalue="Gradle.bms [compileQuerydsl]" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8151d423-ba0d-4708-855c-05ca2f757199" name="Changes" comment="" />
-      <created>1656591289736</created>
+      <changelist id="0ff2fc36-63c1-4b1e-8a8c-d0f8073bd63d" name="Changes" comment="" />
+      <created>1673356152893</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1656591289736</updated>
-      <workItem from="1660288242393" duration="828000" />
-      <workItem from="1660289404715" duration="23000" />
-      <workItem from="1660371133695" duration="1204000" />
-      <workItem from="1660376286044" duration="510000" />
-      <workItem from="1660377161355" duration="1246000" />
-      <workItem from="1660560100689" duration="28000" />
-      <workItem from="1660711837805" duration="817000" />
-      <workItem from="1660717286893" duration="4942000" />
-      <workItem from="1660974924961" duration="138000" />
-      <workItem from="1660979535852" duration="31000" />
-      <workItem from="1660980964219" duration="399000" />
-      <workItem from="1660981946188" duration="12000" />
-      <workItem from="1660982370211" duration="10000" />
-      <workItem from="1660982446461" duration="6000" />
-      <workItem from="1663033344253" duration="528000" />
-      <workItem from="1663056529227" duration="1342000" />
-      <workItem from="1663077072171" duration="20000" />
-      <workItem from="1663392569649" duration="690000" />
-      <workItem from="1663858387608" duration="303000" />
-      <workItem from="1670489749397" duration="250000" />
-      <workItem from="1670490115530" duration="81000" />
-      <workItem from="1673352506317" duration="1985000" />
-      <workItem from="1673354672151" duration="1081000" />
-      <workItem from="1673356344774" duration="8000" />
-      <workItem from="1673507754793" duration="269000" />
-      <workItem from="1673515103917" duration="1244000" />
+      <updated>1673356152893</updated>
+      <workItem from="1673356154307" duration="1739000" />
+      <workItem from="1673428501640" duration="9964000" />
+      <workItem from="1673508029989" duration="163000" />
+      <workItem from="1673508230364" duration="632000" />
+      <workItem from="1673521889852" duration="10594000" />
+      <workItem from="1673585861783" duration="589000" />
+      <workItem from="1673587244671" duration="756000" />
+      <workItem from="1673662046986" duration="2004000" />
+      <workItem from="1673664081531" duration="13000" />
+      <workItem from="1673665787959" duration="152000" />
     </task>
     <servers />
   </component>
