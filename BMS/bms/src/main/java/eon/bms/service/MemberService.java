@@ -1,6 +1,5 @@
 package eon.bms.service;
 
-import eon.bms.domain.Member;
 import eon.bms.dto.RegisterForm;
 import eon.bms.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;

@@ -1,5 +1,6 @@
 package eon.bms.domain;
 
+import eon.bms.dto.BookUpdateForm;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,4 +28,12 @@ public class Book {
     private GenreEnum genre;
     @Column(name = "book_company", nullable = false)
     private String company;
+
+    public void updateBook(BookUpdateForm form) {
+        this.name = form.getName();
+        this.author = form.getAuthor();
+        this.company = form.getCompany();
+        this.year = form.getYear();
+        this.genre = form.getGenre();
+    }
 }

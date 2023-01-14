@@ -3,11 +3,13 @@ package eon.bms.service;
 import eon.bms.domain.Book;
 import eon.bms.dto.BookSaveForm;
 import eon.bms.dto.BookUpdateForm;
+import eon.bms.dto.SearchForm;
 import eon.bms.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -26,23 +28,23 @@ public class BookManagementService {
     }
 
     //도서 검색
-    public Page<Book> search(String keyword, String category, Pageable pageable) {
+    public Page<Book> search(SearchForm form, Pageable pageable) {
         Page<Book> books = null;
-        switch (category) {
+        switch (form.getCategory()) {
             case "NAME":
-                books = bookRepository.findByName(keyword, pageable);
+                books = bookRepository.findByName(form.getKeyword(), pageable);
                 break;
             case "AUTHOR":
-                books = bookRepository.findByAuthor(keyword, pageable);
+                books = bookRepository.findByAuthor(form.getKeyword(), pageable);
                 break;
             case "YEAR":
-                books = bookRepository.findByYear(keyword, pageable);
+                books = bookRepository.findByYear(form.getKeyword(), pageable);
                 break;
             case "GENRE":
-                books = bookRepository.findByGenre(keyword, pageable);
+                books = bookRepository.findByGenre(form.getKeyword(), pageable);
                 break;
             case "COMPANY":
-                books = bookRepository.findByCompany(keyword, pageable);
+                books = bookRepository.findByCompany(form.getKeyword(), pageable);
                 break;
         }
         return books;
@@ -54,9 +56,10 @@ public class BookManagementService {
     }
 
     // 도서 수정
+    @Transactional
     public void updateBook(BookUpdateForm form) {
         Book book = bookRepository.findById(form.getId());
-        book.
+        book.updateBook(form);
     }
 
     // 도서 상세 정보

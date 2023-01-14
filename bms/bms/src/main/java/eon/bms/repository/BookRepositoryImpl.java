@@ -1,11 +1,9 @@
 package eon.bms.repository;
 
-import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import eon.bms.domain.Book;
 import eon.bms.domain.GenreEnum;
 import eon.bms.domain.QBook;
-import eon.bms.dto.BookUpdateForm;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

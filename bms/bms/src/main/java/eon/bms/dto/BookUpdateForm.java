@@ -26,15 +26,9 @@ public class BookUpdateForm {
     @Min(0)
     private String year;
 
-    @NotNull
-    @NotBlank
     private GenreEnum genre;
 
     @NotNull
     @NotBlank
     private String company;
-
-    @NotNull
-    @NotBlank
-    private Long count;
 }

@@ -3,6 +3,7 @@ package eon.bms.controller;
 import eon.bms.domain.Book;
 import eon.bms.dto.BookSaveForm;
 import eon.bms.dto.BookUpdateForm;
+import eon.bms.dto.SearchForm;
 import eon.bms.service.BookManagementService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -66,8 +67,7 @@ public class BookController {
     }
 
     @PostMapping("/{bookId}/edit")
-    public String bookEdit(@PathVariable("bookName")String bookName,
-                           @Validated @ModelAttribute("book") BookUpdateForm form,
+    public String bookEdit(@Validated @ModelAttribute("book") BookUpdateForm form,
                            BindingResult bindingResult,
                            RedirectAttributes redirectAttributes) {
         // 검증 실패시
@@ -77,8 +77,8 @@ public class BookController {
         // 검증 성공시
         bookManagementService.updateBook(form);
         redirectAttributes.addAttribute("status", true);
-        return "redirect:/books/" +
-                form.getName()
+        return "redirect:/" +
+                form.getId()
                 + "/detail";
     }
 
@@ -87,14 +87,16 @@ public class BookController {
     public String bookDeleteForm(@ModelAttribute("book") Book book,
                                  @PathVariable("bookId") Long bookId,
                                  Model model) {
-        model.addAttribute("findResult", bookManagementService.detailBook(bookId));
+        log.info("bookId={}", bookId);
+        model.addAttribute("book", bookManagementService.detailBook(bookId));
         return "/basic/deleteForm";
     }
 
     @PostMapping("/{bookId}/delete")
-    public String bookDelete(@ModelAttribute Book book) {
-        bookManagementService.deleteBook(book.getId());
-        return "redirect:/basic/books";
+    public String bookDelete(@PathVariable("bookId") Long bookId) {
+        log.info("bookId={}", bookId);
+        bookManagementService.deleteBook(bookId);
+        return "redirect:/books";
     }
 
     // 도서 검색
@@ -104,15 +106,10 @@ public class BookController {
     }
 
     @PostMapping("/search")
-    public String findBookListByBookName(@RequestParam("keyword") String keyword,
-                                         @RequestParam("category") String category,
-                                         BindingResult bindingResult,
+    public String findBookListByBookName(@ModelAttribute SearchForm form,
                                          Model model,
                                          Pageable pageable) {
-        if (bindingResult.hasErrors()) {
-            return "/basic/searchForm";
-        }
-        Page<Book> books = bookManagementService.search(keyword, category, pageable);
+        Page<Book> books = bookManagementService.search(form, pageable);
         if (books.isEmpty()) {
             model.addAttribute("noResult", true);
         }
