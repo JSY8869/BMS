@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link href="../css/bootstrap.min.css"
+          th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <style>
+         .container {
+         max-width: 560px;
+         }
+          .field-error {
+         border-color: #dc3545;
+         color: #dc3545;
+         }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>도서 검색 폼</h2>
+    </div>
+    <form action="searchForm.html" th:action method="POST">
+        <div>
+            <input type="text" id="keyword" name="keyword" class="form-control"
+                   placeholder="검색어를 입력하세요.">
+        </div>
+
+        <!-- SELECT -->
+        <div>
+            <div>검색 방식</div>
+            <select class="form-select" id="category" name="category">
+                <option value='' selected>-- 선택 --</option>
+                <option value='NAME'>제목</option>
+                <option value='AUTHOR'>저자</option>
+                <option value='YEAR'>출판연도</option>
+                <option value='GENRE'>장르</option>
+                <option value='COMPANY'>출판사명</option>
+            </select>
+        </div>
+
+        <hr class="my-4">
+        <div class="row">
+            <div class="col">
+                <button class="w-100 btn btn-primary btn-lg" type="submit">검색</button>
+            </div>
+            <div class="col">
+                <button class="w-100 btn btn-secondary btn-lg"
+                        onclick="location.href='books.html'"
+                        th:onclick="|location.href='@{/books}'|"
+                        type="button">취소</button>
+            </div>
+        </div>
+    </form>
+</div> <!-- /container -->
+</body>
+</html>
